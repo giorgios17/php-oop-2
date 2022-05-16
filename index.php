@@ -28,9 +28,9 @@
     var_dump($product);
 
     $guest = new Guest();
-    echo($guest->cart);
+    echo('<p>sconto ospite '.$guest->totalPrice().'€</p>');
     $account = new Account();
-    echo($account->cart);
+    echo('<p>sconto account registrato '.$account->totalPrice().'€</p>');
     ?>
 
 

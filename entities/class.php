@@ -20,24 +20,24 @@ class Guest{
     public $name;
     public $address;
     public $phone;
-    public $cart = 100;
-    protected $sconto = false;
+    public $cart = 152;
+    public $sconto = false;
     protected $creditCard;
     protected $yearOfExpireCc;
     
-    public function totalePrice(){
-        if($sconto){
-            return $cart = $cart * 20 / 100;
+    public function totalPrice(){
+        if($this->sconto){
+            return $this->cart * 20 / 100;
         }
         else{
-            return $cart;
+            return $this->cart;
         }
     }
 
 }
 
 class Account extends Guest{
-    protected $sconto = true;
+    public $sconto = true;
 }
 
 
