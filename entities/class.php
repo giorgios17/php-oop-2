@@ -4,7 +4,6 @@ class Product{
     private $price;
     public $typeOfProduct;
     public $size;
-    public $totalProduct = [];
 
     public function getPrice(){
         return $this->price;
@@ -21,6 +20,13 @@ class Product{
     }
 }
 
+class Cart extends Product{
+    public $totalProduct = [];
+    
+    public function addToCart(){
+        return $this->totalProduct[]= $this;
+    }
+}
 
 class Payment {
 

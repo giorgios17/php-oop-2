@@ -24,8 +24,11 @@
     <?php
     include 'entities/class.php';
 
-    $product = new Product('croccantini', 35, 'cibo');
-    var_dump($product);
+    $product = new Cart('croccantini', 12, 'cibo');
+    $product->addToCart();
+    $product2 = new Cart('cuccia per maltese', 35, 'accessori');
+    $product2->addToCart();
+    var_dump($product2->totalProduct);
 
     $user = new User('gino','via calzolaio 3', '0256295962', 2022, false);
     var_dump($user);
