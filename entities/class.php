@@ -4,6 +4,7 @@ class Product{
     private $price;
     public $typeOfProduct;
     public $size;
+    public $totalProduct = [];
 
     public function getPrice(){
         return $this->price;
@@ -15,6 +16,7 @@ class Product{
         $this->typeOfProduct = $_typeOfProduct;
     }
 }
+
 
 class Payment {
 
