@@ -16,17 +16,25 @@ class Product{
     }
 }
 
-class Guest{
+class User{
     public $name;
     public $address;
     public $phone;
     public $cart = 152;
-    public $sconto = false;
+    public $isRegistered = false;
     public $creditCard;
     public $yearOfExpireCc;
     
+
+    function __construct($_name, $_address, $_creditCard, $_yearOfExpireCc){
+        $this->name = $_name;
+        $this->address = $_address;
+        $this->creditCard = $_creditCard;
+        $this->yearOfExpireCc = $_yearOfExpireCc;
+    }
+
     public function totalPrice(){
-        if($this->sconto){
+        if($this->isRegistered){
             return $this->cart * 20 / 100;
         }
         else{
@@ -36,12 +44,7 @@ class Guest{
 
 }
 
-class Account extends Guest{
-    public $sconto = true;
-}
-
-class Payment extends Account{
-    public $paymentStatus;
+class Payment extends User{
 
     function paymentCheck(){
         if($this->yearOfExpireCc < 2022){
