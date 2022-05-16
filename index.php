@@ -28,9 +28,7 @@
     var_dump($product);
 
     $user = new User('gino','via calzolaio 3', '0256295962', 2022, false);
-    echo('<pre>');
     var_dump($user);
-    echo('</pre>');
     echo('<p>costo totale '.$user->totalPrice().'€</p>');
     echo($user->paymentCheck());
 

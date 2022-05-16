@@ -21,6 +21,7 @@ class Payment {
     public $creditCard;
     public $yearOfExpireCc;
 
+    //CONTROLLO SCADENZA CARTA DI CREDITO
     function paymentCheck(){
         if($this->yearOfExpireCc <= 2021){
             return 'Carta di credito scaduta';
@@ -48,6 +49,7 @@ class User extends Payment{
         $this->isRegistered = $_isRegistered;
     }
 
+    //CALCOLO SCONTO DEL 20% IN CASO DI UTENTE REGISTRATO AL CARRELLO
     public function totalPrice(){
         if($this->isRegistered){
             return $this->cart - ($this->cart  * 20 / 100);
