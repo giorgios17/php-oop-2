@@ -22,8 +22,8 @@ class Guest{
     public $phone;
     public $cart = 152;
     public $sconto = false;
-    protected $creditCard;
-    protected $yearOfExpireCc;
+    public $creditCard;
+    public $yearOfExpireCc;
     
     public function totalPrice(){
         if($this->sconto){
@@ -40,5 +40,17 @@ class Account extends Guest{
     public $sconto = true;
 }
 
+class Payment extends Account{
+    public $paymentStatus;
+
+    function paymentCheck(){
+        if($this->yearOfExpireCc < 2022){
+            return 'Carta di credito scaduta';
+        }
+        else{
+            return 'Pagamento effettuato';
+        }
+    }
+}
 
 ?>

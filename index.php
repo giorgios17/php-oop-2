@@ -31,6 +31,16 @@
     echo('<p>sconto ospite '.$guest->totalPrice().'€</p>');
     $account = new Account();
     echo('<p>sconto account registrato '.$account->totalPrice().'€</p>');
+
+    $payment = new Payment();
+    $payment->yearOfExpireCc = 2021;
+    var_dump($payment);
+    echo($payment->paymentCheck());
+
+
+
+
+
     ?>
 
 
