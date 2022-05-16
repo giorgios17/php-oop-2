@@ -27,12 +27,12 @@
     $product = new Product('croccantini', 35, 'cibo');
     var_dump($product);
 
-    $user = new User('gino','via calzolaio 3', '0256295962', 2020);
+    $user = new User('gino','via calzolaio 3', '0256295962', 2020, true);
     echo('<p>costo totale '.$user->totalPrice().'€</p>');
     // $account = new Account('manuele','via reggio campi 13', '985969421', 2023);
     // echo('<p>sconto account registrato '.$account->totalPrice().'€</p>');
 
-    $payment = new Payment('gino','via calzolaio 3', '0256295962', 2020);
+    $payment = new Payment('gino','via calzolaio 3', '0256295962', 2020, true);
     $payment->yearOfExpireCc = 2021;
     var_dump($payment);
     echo($payment->paymentCheck());

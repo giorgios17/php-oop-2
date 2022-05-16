@@ -21,21 +21,22 @@ class User{
     public $address;
     public $phone;
     public $cart = 152;
-    public $isRegistered = false;
+    public $isRegistered;
     public $creditCard;
     public $yearOfExpireCc;
     
 
-    function __construct($_name, $_address, $_creditCard, $_yearOfExpireCc){
+    function __construct($_name, $_address, $_creditCard, $_yearOfExpireCc, $_isRegistered){
         $this->name = $_name;
         $this->address = $_address;
         $this->creditCard = $_creditCard;
         $this->yearOfExpireCc = $_yearOfExpireCc;
+        $this->isRegistered = $_isRegistered;
     }
 
     public function totalPrice(){
         if($this->isRegistered){
-            return $this->cart * 20 / 100;
+            return $this->cart - ($this->cart  * 20 / 100);
         }
         else{
             return $this->cart;
