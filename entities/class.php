@@ -16,14 +16,28 @@ class Product{
     }
 }
 
-class User{
+class Payment {
+
+    public $creditCard;
+    public $yearOfExpireCc;
+
+    function paymentCheck(){
+        if($this->yearOfExpireCc <= 2021){
+            return 'Carta di credito scaduta';
+        }
+        else{
+            return 'Pagamento effettuato';
+        }
+    }
+}
+
+class User extends Payment{
     public $name;
     public $address;
     public $phone;
     public $cart = 152;
     public $isRegistered;
-    public $creditCard;
-    public $yearOfExpireCc;
+    
     
 
     function __construct($_name, $_address, $_creditCard, $_yearOfExpireCc, $_isRegistered){
@@ -45,16 +59,6 @@ class User{
 
 }
 
-class Payment extends User{
 
-    function paymentCheck(){
-        if($this->yearOfExpireCc < 2022){
-            return 'Carta di credito scaduta';
-        }
-        else{
-            return 'Pagamento effettuato';
-        }
-    }
-}
 
 ?>
