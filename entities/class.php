@@ -15,6 +15,10 @@ class Product{
         $this->price = $_price;
         $this->typeOfProduct = $_typeOfProduct;
     }
+
+    function addToCart(){
+        
+    }
 }
 
 
